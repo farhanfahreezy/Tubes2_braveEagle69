@@ -8,7 +8,7 @@ namespace MazeSolver{
 
         public Tile(char c){
             type = c;
-            pathBefore = 'N';
+            pathBefore = 'Z';
             shortestPath = -1;
         }
 
@@ -30,6 +30,10 @@ namespace MazeSolver{
         public void setShortestPath(int shortestPath)
         {
             this.shortestPath = shortestPath;
+        }
+
+        public void printTile(){
+            Console.Write(type);
         }
     }
 }

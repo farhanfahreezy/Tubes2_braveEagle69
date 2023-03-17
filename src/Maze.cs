@@ -8,7 +8,7 @@ namespace MazeSolver{
 
         public Maze(char[,] charArray){
             // Bikin maze yang nambah luaran
-            sizeY = charArray.Length;
+            sizeY = charArray.Length/charArray.GetLength(0);
             sizeX = charArray.GetLength(0);
             maze = new Tile[sizeY+2,sizeX+2];
             for(int i = 0;i<sizeY+2;i++){
@@ -25,7 +25,8 @@ namespace MazeSolver{
         public void printMaze(){
             for(int i = 0; i<sizeY;i++){
                 for(int j = 0; j<sizeX; j++){
-                    Console.Write(maze[i+1,j+1]);
+                    maze[i+1,j+1].printTile();
+                    Console.Write(' ');
                 }
                 Console.Write("\n");
             }

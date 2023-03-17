@@ -3,8 +3,10 @@
 namespace MazeSolver{
     class Program{
         static void Main(string[] args){
-            string filePath = Console.ReadLine() ?? "";
+            IO input = new IO();
             Reader reader = new Reader();
+
+            string filePath = input.getString("Masukkan nama file: ");
             Maze newMaze = new (reader.readFile(filePath));
             newMaze.printMaze();
         }
