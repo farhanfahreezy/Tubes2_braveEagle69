@@ -1,0 +1,15 @@
+D:\Coding\C#\Tubes2_braveEagle69\bin\Debug\net7.0\Tubes2_braveEagle69.exe
+D:\Coding\C#\Tubes2_braveEagle69\bin\Debug\net7.0\Tubes2_braveEagle69.deps.json
+D:\Coding\C#\Tubes2_braveEagle69\bin\Debug\net7.0\Tubes2_braveEagle69.runtimeconfig.json
+D:\Coding\C#\Tubes2_braveEagle69\bin\Debug\net7.0\Tubes2_braveEagle69.dll
+D:\Coding\C#\Tubes2_braveEagle69\bin\Debug\net7.0\Tubes2_braveEagle69.pdb
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\Tubes2_braveEagle69.csproj.AssemblyReference.cache
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\Tubes2_braveEagle69.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\Tubes2_braveEagle69.AssemblyInfoInputs.cache
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\Tubes2_braveEagle69.AssemblyInfo.cs
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\Tubes2_braveEagle69.csproj.CoreCompileInputs.cache
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\Tubes2_braveEagle69.dll
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\refint\Tubes2_braveEagle69.dll
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\Tubes2_braveEagle69.pdb
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\Tubes2_braveEagle69.genruntimeconfig.cache
+D:\Coding\C#\Tubes2_braveEagle69\obj\Debug\net7.0\ref\Tubes2_braveEagle69.dll
