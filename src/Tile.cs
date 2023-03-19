@@ -12,6 +12,9 @@ namespace MazeSolver{
             status = -1;
         }
 
+        public char getType(){
+            return type;
+        }
         public char getPathBefore()
         {
             return this.pathBefore;
@@ -33,7 +36,10 @@ namespace MazeSolver{
         }
 
         public void printTile(){
-            if(status == -1){
+            if(type == 'X'){
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Black;
+            } else if(status == -1){
                 Console.BackgroundColor = ConsoleColor.White;
                 Console.ForegroundColor = ConsoleColor.Black;
             } else if(status == 0){

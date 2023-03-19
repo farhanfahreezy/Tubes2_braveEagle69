@@ -2,20 +2,20 @@ using System;
 using System.Collections.Generic;
 
 namespace MazeSolver{
-    class Stack{
-        private List<Tile> stack;
+    class Stack<T>{
+        private List<T> stack;
 
         public Stack(){
-            stack = new List<Tile>();
+            stack = new List<T>();
         }
 
-        public Tile pop(){
-            Tile pop = stack[0];
+        public T pop(){
+            T pop = stack[0];
             stack.RemoveAt(0);
             return pop;
         }
 
-        public void push(Tile push){
+        public void push(T push){
             stack.Insert(0,push);
         }
 

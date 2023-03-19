@@ -1,20 +1,20 @@
 using System.Collections.Generic;
 
 namespace MazeSolver{
-    class Queue{
-        private List<Tile> queue;
+    class Queue<T>{
+        private List<T> queue;
 
         public Queue(){
-            queue = new List<Tile>();
+            queue = new List<T>();
         }
 
-        public Tile dequeue(){
-            Tile deque = queue[0];
+        public T dequeue(){
+            T deque = queue[0];
             queue.RemoveAt(0);
             return deque;
         }
 
-        public void enqueue(Tile enq){
+        public void enqueue(T enq){
             queue.Add(enq);
         }
 
