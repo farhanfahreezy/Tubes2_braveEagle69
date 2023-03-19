@@ -4,12 +4,12 @@ namespace MazeSolver{
     class Tile{
         private char type;
         private char pathBefore;
-        private int shortestPath;
+        private int status;
 
         public Tile(char c){
             type = c;
             pathBefore = 'Z';
-            shortestPath = -1;
+            status = -1;
         }
 
         public char getPathBefore()
@@ -22,18 +22,33 @@ namespace MazeSolver{
             this.pathBefore = pathBefore;
         }
 
-        public int getShortestPath()
+        public int getStatus()
         {
-            return this.shortestPath;
+            return this.status;
         }
 
-        public void setShortestPath(int shortestPath)
+        public void setStatus(int newStatus)
         {
-            this.shortestPath = shortestPath;
+            this.status = newStatus;
         }
 
         public void printTile(){
+            if(status == -1){
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+            } else if(status == 0){
+                Console.BackgroundColor = ConsoleColor.Gray;
+                Console.ForegroundColor = ConsoleColor.White;
+            } else if(status == 1){
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+                Console.ForegroundColor = ConsoleColor.White;
+            } else if(status == 2){
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            
             Console.Write(type);
+            Console.ResetColor();
         }
     }
 }
