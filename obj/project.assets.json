@@ -8,26 +8,24 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\dzafa\\.nuget\\packages\\": {}
+    "C:\\Users\\Shidq\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Coding\\C#\\Tubes2_braveEagle69\\Tubes2_braveEagle69.csproj",
+      "projectUniqueName": "C:\\Users\\Shidq\\OneDrive\\Documents\\GitHub\\Tubes2_braveEagle69\\Tubes2_braveEagle69.csproj",
       "projectName": "Tubes2_braveEagle69",
-      "projectPath": "D:\\Coding\\C#\\Tubes2_braveEagle69\\Tubes2_braveEagle69.csproj",
-      "packagesPath": "C:\\Users\\dzafa\\.nuget\\packages\\",
-      "outputPath": "D:\\Coding\\C#\\Tubes2_braveEagle69\\obj\\",
+      "projectPath": "C:\\Users\\Shidq\\OneDrive\\Documents\\GitHub\\Tubes2_braveEagle69\\Tubes2_braveEagle69.csproj",
+      "packagesPath": "C:\\Users\\Shidq\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Shidq\\OneDrive\\Documents\\GitHub\\Tubes2_braveEagle69\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dzafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Shidq\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -61,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
