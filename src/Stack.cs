@@ -22,5 +22,9 @@ namespace MazeSolver{
         public int getSize(){
             return stack.Count;
         }
+
+        public void clear(){
+            stack.Clear();
+        }
     }
 }

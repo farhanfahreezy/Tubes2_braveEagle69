@@ -22,8 +22,8 @@ namespace MazeSolver{
                     } else {
                         maze[i,j] = new Tile(charArray[i-1,j-1],j,i);
                         if(maze[i,j].getType() == 'K'){
-                            xtemp = i;
-                            ytemp = j;
+                            xtemp = j;
+                            ytemp = i;
                         }
                         else if(maze[i,j].getType() == 'T'){
                             treasureCount++;

@@ -9,6 +9,7 @@ namespace MazeSolver{
             Tile start = maze.getTile(maze.getStart().getX(),maze.getStart().getY());
 
             queue.enqueue(start);
+            start.addStatus();
 
             while(maze.getTreasureCount()!=0){
                 doTheThing(maze,queue,path);
@@ -26,26 +27,29 @@ namespace MazeSolver{
             if(check.getType()=='T'){
                 maze.decreaseTreasureCount();
                 getPath(check,maze,path);
+                queue.clear();
+                queue.enqueue(check);
+                check.addStatus();
             }
 
             // Check Up
             Tile tileCheck = maze.getTile(checkX,checkY-1);
-            if(tileCheck.getType()!='X' || tileCheck.getStatus()== -1){
+            if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
                 enqueue(queue,tileCheck,'D');
             }
             // Check Right
             tileCheck = maze.getTile(checkX+1,checkY);
-            if(tileCheck.getType()!='X' || tileCheck.getStatus()== -1){
+            if(tileCheck.getType()!='X'&& tileCheck.getStatus()<check.getStatus()){
                 enqueue(queue,tileCheck,'L');
             }
             // Check Down
             tileCheck = maze.getTile(checkX,checkY+1);
-            if(tileCheck.getType()!='X' || tileCheck.getStatus()== -1){
+            if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
                 enqueue(queue,tileCheck,'U');
             }
             // Check Left
             tileCheck = maze.getTile(checkX-1,checkY);
-            if(tileCheck.getType()!='X' || tileCheck.getStatus()== -1){
+            if(tileCheck.getType()!='X'&& tileCheck.getStatus()<check.getStatus()){
                 enqueue(queue,tileCheck,'R');
             }
 
@@ -61,13 +65,15 @@ namespace MazeSolver{
             deque.addStatus();
             return deque;
         }
-        public void getPath(Tile treasure, Maze maze, List<char> path){
+        public void getPath(Tile check, Maze maze, List<char> path){
             List<char> tempChar = new List<char>();
-
+            Tile treasure = new Tile(check.getType(),check.getPosition().getX(),check.getPosition().getY());
+            treasure.setPathBefore(check.getPathBefore());
             int treasureX = treasure.getPosition().getX();
             int treasureY = treasure.getPosition().getY();
 
-
+            check.setPathBefore('Z');
+            check.setType('R');
             if(treasure.getPathBefore() == 'U'){
                 tempChar.Insert(0,'D');
                 treasure = maze.getTile(treasureX,treasureY-1);
@@ -82,6 +88,7 @@ namespace MazeSolver{
                 treasure = maze.getTile(treasureX+1,treasureY);
             }
 
+            
             while(treasure.getPathBefore()!='Z'){
                 treasureX = treasure.getPosition().getX();
                 treasureY = treasure.getPosition().getY();
@@ -99,8 +106,8 @@ namespace MazeSolver{
                     treasure = maze.getTile(treasureX+1,treasureY);
                 }
             }
+            
 
-            tempChar.Reverse();
             path.AddRange(tempChar);
 
         }

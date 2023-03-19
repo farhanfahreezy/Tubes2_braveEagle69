@@ -21,5 +21,9 @@ namespace MazeSolver{
         public int getSize(){
             return queue.Count;
         }
+
+        public void clear(){
+            queue.Clear();
+        }
     }
 }
