@@ -33,7 +33,6 @@ namespace MazeSolver{
             }
             start = new Point(xtemp,ytemp);
         }
-
         public void printMaze(){
             for(int i = 0; i<sizeY;i++){
                 for(int j = 0; j<sizeX; j++){
@@ -45,9 +44,11 @@ namespace MazeSolver{
             Console.WriteLine(this.treasureCount);
             start.print();
         }
-
-        // public Tile GetTile(int i, int j){
-        //     return this.maze[i,j];
-        // }
+        public Point getStart(){
+            return start;
+        }
+        public int getTreasureCount(){
+            return treasureCount;
+        }
     }
 }

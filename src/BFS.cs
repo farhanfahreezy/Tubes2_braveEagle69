@@ -2,8 +2,11 @@ using System;
 
 namespace MazeSolver{
     class BFS{
-        public void BFSSolver(Maze maze){
-
+        public void Solver(Maze maze){
+            int treasureFound = 0;
+            while(treasureFound!=maze.getTreasureCount()){
+                // code here
+            }
         }
     }
 }
