@@ -18,9 +18,9 @@ namespace MazeSolver{
             for(int i = 0;i<sizeY+2;i++){
                 for(int j = 0;j<sizeX+2;j++){
                     if(i == 0 || i == sizeY+1 || j == 0 || j == sizeX+1){
-                        maze[i,j] = new Tile('X');
+                        maze[i,j] = new Tile('X',j,i);
                     } else {
-                        maze[i,j] = new Tile(charArray[i-1,j-1]);
+                        maze[i,j] = new Tile(charArray[i-1,j-1],j,i);
                         if(maze[i,j].getType() == 'K'){
                             xtemp = i;
                             ytemp = j;
@@ -43,12 +43,25 @@ namespace MazeSolver{
             }
             Console.WriteLine(this.treasureCount);
             start.print();
+            Console.Write('\n');
         }
         public Point getStart(){
             return start;
         }
         public int getTreasureCount(){
             return treasureCount;
+        }
+        public void decreaseTreasureCount(){
+            treasureCount--;
+        }
+        public Tile getTile(int x, int y){
+            return maze[y,x];
+        }
+        public int getSizeX(){
+            return sizeX;
+        }
+        public int getSizeY(){
+            return sizeY;
         }
     }
 }

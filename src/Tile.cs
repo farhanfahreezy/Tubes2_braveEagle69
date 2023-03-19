@@ -5,8 +5,10 @@ namespace MazeSolver{
         private char type;
         private char pathBefore;
         private int status;
+        private Point position;
 
-        public Tile(char c){
+        public Tile(char c, int i, int j){
+            position = new Point(i,j);
             type = c;
             pathBefore = 'Z';
             status = -1;
@@ -35,6 +37,13 @@ namespace MazeSolver{
             this.status = newStatus;
         }
 
+        public void addStatus(){
+            this.status++;
+        }
+        public Point getPosition(){
+            return position;
+        }
+
         public void printTile(){
             if(type == 'X'){
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -54,7 +63,8 @@ namespace MazeSolver{
             }
             
             Console.Write(type);
-            Console.ResetColor();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Black;
         }
     }
 }
