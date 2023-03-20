@@ -26,5 +26,20 @@ namespace MazeSolver{
         public void clear(){
             stack.Clear();
         }
+
+        public T getElmt(int i){
+            return stack[i];
+        }
+
+        public bool isInside(T elmt){
+            return stack.Contains(elmt);
+        }
+
+        public void removeEl(T elmt){
+            stack.Remove(elmt);
+        }
+
+
+        
     }
 }

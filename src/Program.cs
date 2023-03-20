@@ -8,15 +8,22 @@ namespace MazeSolver{
             BFS bfs = new BFS();
             DFS dfs = new DFS();
             Stopwatch stopwatch = new Stopwatch();
+            List<char> path = new List<char>();
 
             string filePath = io.getString("Masukkan nama file: ");
             Maze newMaze = new (reader.readFile(filePath));
             newMaze.printMaze();
 
             
-
+            int option = io.getInt("Masukkan Algorima: ",1,2);
             stopwatch.Start();
-            List<char> path = bfs.Solver(newMaze);
+            if(option == 1){
+                Console.WriteLine("BFS");
+                path = bfs.Solver(newMaze);
+            } else {
+                Console.WriteLine("DFS");
+                path = dfs.Solver(newMaze);
+            }
             stopwatch.Stop();
             TimeSpan executionTime = stopwatch.Elapsed;
             

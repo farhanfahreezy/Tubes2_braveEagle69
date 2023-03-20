@@ -8,6 +8,16 @@ namespace MazeSolver{
             return input;
         }
 
+        public int getInt(string command,int batasBawah, int batasAtas){
+            int input = batasBawah-1;
+            while(input < batasBawah || input > batasAtas){
+                Console.Write(command);
+                string inputStr = Console.ReadLine() ?? "";
+                input = int.Parse(inputStr);
+            }
+            return input;
+        }
+
         public int charToInt(char c){
             int val = (int) c;
             if (val >= 48 && val <=57){
