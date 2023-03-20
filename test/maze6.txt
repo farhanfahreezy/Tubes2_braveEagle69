@@ -1,0 +1,8 @@
+7 3
+X R T
+T R X
+X R T
+X R X
+X K X
+X R X
+X R T

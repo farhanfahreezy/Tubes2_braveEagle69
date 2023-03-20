@@ -46,6 +46,10 @@ namespace MazeSolver{
         {
             return this.numOfStepped;
         }
+        public void setNumOfStepped(int aaa)
+        {
+            this.numOfStepped = aaa;
+        }
         public void addNumOfStepped(){
             numOfStepped++;
         }
@@ -65,10 +69,19 @@ namespace MazeSolver{
                 Console.ForegroundColor = ConsoleColor.Black;
             } else if(numOfStepped!=0){
                 if(numOfStepped == 1){
-                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.BackgroundColor = ConsoleColor.DarkRed;
                     Console.ForegroundColor = ConsoleColor.White;
-                } else {
-                    Console.BackgroundColor = ConsoleColor.DarkCyan;
+                } else if(numOfStepped == 2) {
+                    Console.BackgroundColor = ConsoleColor.DarkYellow;
+                    Console.ForegroundColor = ConsoleColor.White;
+                } else if(numOfStepped == 3) {
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    Console.ForegroundColor = ConsoleColor.White;
+                } else if(numOfStepped == 4) {
+                    Console.BackgroundColor = ConsoleColor.DarkBlue;
+                    Console.ForegroundColor = ConsoleColor.White;
+                } else if(numOfStepped == 5) {
+                    Console.BackgroundColor = ConsoleColor.DarkMagenta;
                     Console.ForegroundColor = ConsoleColor.White;
                 }
             } else {

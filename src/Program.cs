@@ -28,6 +28,7 @@ namespace MazeSolver{
             TimeSpan executionTime = stopwatch.Elapsed;
             
             // Output
+            Console.WriteLine("");
             newMaze.printMaze();
             Console.WriteLine("");
             Console.WriteLine($"Path: {io.pathToString(path)}");

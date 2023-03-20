@@ -13,9 +13,9 @@ namespace MazeSolver{
 
             while(maze.getTreasureCount()!=0){
                 doTheThing(maze,queue,path);
-                System.Threading.Thread.Sleep(500);
-                Console.Clear();
-                maze.printMaze();
+                // System.Threading.Thread.Sleep(500);
+                // Console.Clear();
+                // maze.printMaze();
             }
 
             return path;
@@ -31,6 +31,7 @@ namespace MazeSolver{
                 maze.decreaseTreasureCount();
                 getPath(check,maze,path);
                 clearQueue(queue);
+                // resetMazeInfo(maze);
                 enqueue(queue,check,'S');
             } else {
                 // Check Up
@@ -112,6 +113,20 @@ namespace MazeSolver{
             treasure.addNumOfStepped();
             return treasure;
 
+        }
+
+        // DEBUG FUNTION
+        public void resetMazeInfo(Maze maze){
+            for(int i = 1; i<maze.getSizeY()+1; i++){
+                for(int j = 1; j<maze.getSizeX()+1; j++){
+                    Tile adhoc = maze.getTile(j,i);
+                    if(adhoc.getStatus()>=2){
+                        adhoc.setStatus(1);
+                    }
+                    // adhoc.setNumOfStepped(0);
+                    // adhoc.setPathBefore('Z');
+                }
+            }
         }
 
     }

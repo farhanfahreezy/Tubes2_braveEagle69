@@ -10,8 +10,9 @@ namespace MazeSolver{
 
         public Maze(char[,] charArray){
             // Bikin maze yang nambah luaran
-            sizeY = charArray.Length/charArray.GetLength(0);
-            sizeX = charArray.GetLength(0);
+            sizeY = charArray.GetLength(0);
+            sizeX = charArray.Length/charArray.GetLength(0);
+
             maze = new Tile[sizeY+2,sizeX+2];
             int xtemp = 0;
             int ytemp = 0;
