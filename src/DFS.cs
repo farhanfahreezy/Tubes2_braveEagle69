@@ -13,9 +13,9 @@ namespace MazeSolver{
 
             while(maze.getTreasureCount()!=0){
                 doTheThing(maze,stack,path);
-                // System.Threading.Thread.Sleep(500);
-                // Console.Clear();
-                // maze.printMaze();
+                System.Threading.Thread.Sleep(500);
+                Console.Clear();
+                maze.printMaze();
             }
 
             return path;
@@ -33,26 +33,26 @@ namespace MazeSolver{
                 clearStack(stack);
                 push(stack,check,'S');
             } else {
-                // Check Up
-                Tile tileCheck = maze.getTile(checkX,checkY-1);
-                if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
-                    push(stack,tileCheck,'D');
-                }
-                // Check Right
-                tileCheck = maze.getTile(checkX+1,checkY);
+                // Check Left
+                Tile tileCheck = maze.getTile(checkX-1,checkY);
                 if(tileCheck.getType()!='X'&& tileCheck.getStatus()<check.getStatus()){
-                    push(stack,tileCheck,'L');
+                    push(stack,tileCheck,'R');
                 }
                 // Check Down
                 tileCheck = maze.getTile(checkX,checkY+1);
                 if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
                     push(stack,tileCheck,'U');
                 }
-                // Check Left
-                tileCheck = maze.getTile(checkX-1,checkY);
+                // Check Right
+                tileCheck = maze.getTile(checkX+1,checkY);
                 if(tileCheck.getType()!='X'&& tileCheck.getStatus()<check.getStatus()){
-                    push(stack,tileCheck,'R');
+                    push(stack,tileCheck,'L');
                 }
+                // Check Up
+                tileCheck = maze.getTile(checkX,checkY-1);
+                if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
+                    push(stack,tileCheck,'D');
+                }                
             }
         }
 

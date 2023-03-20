@@ -1,0 +1,8 @@
+7 7
+X X X T X X X
+X X X R X X X
+X X X R X X X
+T R R K R R T
+X X X R X X X
+X X X R X X X
+X X X T X X X

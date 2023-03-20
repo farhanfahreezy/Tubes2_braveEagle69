@@ -13,9 +13,9 @@ namespace MazeSolver{
 
             while(maze.getTreasureCount()!=0){
                 doTheThing(maze,queue,path);
-                // System.Threading.Thread.Sleep(500);
-                // Console.Clear();
-                // maze.printMaze();
+                System.Threading.Thread.Sleep(500);
+                Console.Clear();
+                maze.printMaze();
             }
 
             return path;
