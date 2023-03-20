@@ -1,21 +1,31 @@
-﻿using System;
+﻿using System.Diagnostics;
 
 namespace MazeSolver{
     class Program{
         static void Main(string[] args){
-            IO input = new IO();
+            IO io = new IO();
             Reader reader = new Reader();
             BFS bfs = new BFS();
             DFS dfs = new DFS();
+            Stopwatch stopwatch = new Stopwatch();
 
-            string filePath = input.getString("Masukkan nama file: ");
+            string filePath = io.getString("Masukkan nama file: ");
             Maze newMaze = new (reader.readFile(filePath));
             newMaze.printMaze();
-            List<char> path = dfs.Solver(newMaze);
-            foreach(char ch in path){
-                Console.WriteLine(ch);
-            }
+
             
+
+            stopwatch.Start();
+            List<char> path = bfs.Solver(newMaze);
+            stopwatch.Stop();
+            TimeSpan executionTime = stopwatch.Elapsed;
+            
+            // Output
+            newMaze.printMaze();
+            Console.WriteLine("");
+            Console.WriteLine($"Path: {io.pathToString(path)}");
+            Console.WriteLine($"Step: {path.Count}");
+            Console.WriteLine($"Time: {executionTime.TotalMilliseconds} ms");            
         }
     }
 }

@@ -25,5 +25,13 @@ namespace MazeSolver{
         public void clear(){
             queue.Clear();
         }
+
+        public T getElmt(int i){
+            return queue[i];
+        }
+
+        public bool isInside(T elmt){
+            return queue.Contains(elmt);
+        }
     }
 }

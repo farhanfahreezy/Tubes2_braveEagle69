@@ -5,6 +5,7 @@ namespace MazeSolver{
         private char type;
         private char pathBefore;
         private int status;
+        private int numOfStepped;
         private Point position;
 
         public Tile(char c, int x, int y){
@@ -41,6 +42,16 @@ namespace MazeSolver{
             this.status = newStatus;
         }
 
+        public int getNumOfStepped()
+        {
+            return this.numOfStepped;
+        }
+        public void addNumOfStepped(){
+            numOfStepped++;
+        }
+        public void decreaseNumOfStepped(){
+            numOfStepped--;
+        }
         public void addStatus(){
             this.status++;
         }
@@ -52,21 +63,32 @@ namespace MazeSolver{
             if(type == 'X'){
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.Black;
-            } else if(status == -1){
-                Console.BackgroundColor = ConsoleColor.White;
-                Console.ForegroundColor = ConsoleColor.Black;
-            } else if(status == 0){
-                Console.BackgroundColor = ConsoleColor.Gray;
-                Console.ForegroundColor = ConsoleColor.White;
-            } else if(status == 1){
-                Console.BackgroundColor = ConsoleColor.DarkGray;
-                Console.ForegroundColor = ConsoleColor.White;
-            } else if(status == 2){
-                Console.BackgroundColor = ConsoleColor.Green;
-                Console.ForegroundColor = ConsoleColor.White;
+            } else if(numOfStepped!=0){
+                if(numOfStepped == 1){
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.White;
+                } else {
+                    Console.BackgroundColor = ConsoleColor.DarkCyan;
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+            } else {
+                if(status == -1){
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.ForegroundColor = ConsoleColor.White;
+                } else if(status == 0){
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                } else {
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Black;
+                } 
+            }
+            if(type == 'F'){
+                Console.Write('T');
+            } else {
+                Console.Write(type);
             }
             
-            Console.Write(type);
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
         }

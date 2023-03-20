@@ -31,5 +31,16 @@ namespace MazeSolver{
             return token; 
         }
 
+        public string pathToString(List<char> arr){
+            string path = "";
+            for(int i = 0;i<arr.Count;i++){
+                path+=arr[i];
+                if(i!=arr.Count-1){
+                    path+='-';
+                }
+            }
+            return path;
+        }
+
     }
 }

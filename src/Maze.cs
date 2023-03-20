@@ -41,9 +41,6 @@ namespace MazeSolver{
                 }
                 Console.Write("\n");
             }
-            Console.WriteLine(this.treasureCount);
-            start.print();
-            Console.Write('\n');
         }
         public Point getStart(){
             return start;
