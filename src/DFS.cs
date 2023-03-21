@@ -34,27 +34,27 @@ namespace MazeSolver{
                 maze.decreaseTreasureCount();
                 getPath(check,maze,path);
                 clearStack(stack);
-                // resetMazeInfo(maze);
                 push(stack,check,'S');
             } else {
                 // Check Left
                 Tile tileCheck = maze.getTile(checkX-1,checkY);
-                if(tileCheck.getType()!='X'&& tileCheck.getStatus()<check.getStatus()){
+                if(tileCheck.getType()!='X'&& check.getPathBefore()!='L'){
                     push(stack,tileCheck,'R');
                 }
                 // Check Down
                 tileCheck = maze.getTile(checkX,checkY+1);
-                if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
+                if(tileCheck.getType()!='X' && check.getPathBefore() != 'D')
+                {
                     push(stack,tileCheck,'U');
                 }
                 // Check Right
                 tileCheck = maze.getTile(checkX+1,checkY);
-                if(tileCheck.getType()!='X'&& tileCheck.getStatus()<check.getStatus()){
+                if(tileCheck.getType()!='X'&& check.getPathBefore() != 'R'){
                     push(stack,tileCheck,'L');
                 }
                 // Check Up
                 tileCheck = maze.getTile(checkX,checkY-1);
-                if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
+                if(tileCheck.getType()!='X' && check.getPathBefore() != 'U'){
                     push(stack,tileCheck,'D');
                 }                
             }
@@ -84,7 +84,7 @@ namespace MazeSolver{
         }
         public void clearStack(Stack<Tile> stack){
             if(stack.getSize()!=0){
-                for(int i = 0;i<stack.getSize()-1;i++){
+                for(int i = 0;i<stack.getSize();i++){
                     stack.getElmt(i).setStatus(stack.getElmt(i).getStatus()-1);
                     if (stack.getElmt(i).getStatus() == -1 && stack.getElmt(i).getType() == 'R')
                     {
@@ -147,19 +147,5 @@ namespace MazeSolver{
                 Global.changeColor(x, y, Color.DarkGreen);
             }
         }
-
-        public void resetMazeInfo(Maze maze){
-            for(int i = 1; i<maze.getSizeY()+1; i++){
-                for(int j = 1; j<maze.getSizeX()+1; j++){
-                    Tile adhoc = maze.getTile(j,i);
-                    if(adhoc.getStatus()>=2){
-                        adhoc.setStatus(1);
-                    }
-                    // adhoc.setNumOfStepped(0);
-                    // adhoc.setPathBefore('Z');
-                }
-            }
-        }
-
     }
 }

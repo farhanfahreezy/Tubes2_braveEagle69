@@ -19,6 +19,7 @@ namespace MazeSolver
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Global.setAlgoChoosen(1);
             Application.Run(new Form1());
         }
 
@@ -30,6 +31,7 @@ namespace MazeSolver
         private static Maze maze;
         private static string filePath;
         private static DataGridView dataGridView1 = new DataGridView();
+        private static int sleepTime = 1000;
 
         public static int getAlgoChoosen() { return algoChoosen; }
         public static void setAlgoChoosen(int newAlgoChoosen) { algoChoosen = newAlgoChoosen; }
@@ -54,8 +56,11 @@ namespace MazeSolver
         public static void setDataGridView(DataGridView dgv) { dataGridView1 = dgv; }
         public static void changeColor(int x, int y, Color color)
         {
-            //System.Threading.Thread.Sleep(500);
             dataGridView1.Rows[y-1].Cells[x-1].Style.BackColor = color;
+            System.Threading.Thread.Sleep(getSleepTime());
+            Application.DoEvents();
         }
+        public static int getSleepTime() { return sleepTime; }
+        public static void setSleepTime(int sT) { sleepTime = sT; }
     }
 }

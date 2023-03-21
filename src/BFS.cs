@@ -34,27 +34,29 @@ namespace MazeSolver{
                 maze.decreaseTreasureCount();
                 getPath(check,maze,path);
                 clearQueue(queue);
-                // resetMazeInfo(maze);
                 enqueue(queue,check,'S');
             } else {
                 // Check Up
                 Tile tileCheck = maze.getTile(checkX,checkY-1);
-                if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
+                if(tileCheck.getType()!='X' && check.getPathBefore()!='U'){
                     enqueue(queue,tileCheck,'D');
                 }
                 // Check Right
                 tileCheck = maze.getTile(checkX+1,checkY);
-                if(tileCheck.getType()!='X'&& tileCheck.getStatus()<check.getStatus()){
+                if(tileCheck.getType()!='X'&& check.getPathBefore() != 'R')
+                {
                     enqueue(queue,tileCheck,'L');
                 }
                 // Check Down
                 tileCheck = maze.getTile(checkX,checkY+1);
-                if(tileCheck.getType()!='X' && tileCheck.getStatus()<check.getStatus()){
+                if(tileCheck.getType()!='X' && check.getPathBefore() != 'D')
+                {
                     enqueue(queue,tileCheck,'U');
                 }
                 // Check Left
                 tileCheck = maze.getTile(checkX-1,checkY);
-                if(tileCheck.getType()!='X'&& tileCheck.getStatus()<check.getStatus()){
+                if(tileCheck.getType()!='X'&& check.getPathBefore() != 'L')
+                {
                     enqueue(queue,tileCheck,'R');
                 }
             }
@@ -82,7 +84,7 @@ namespace MazeSolver{
         }
         public void clearQueue(Queue<Tile> queue){
             if(queue.getSize()!=0){
-                for(int i = 0;i<queue.getSize()-1;i++){
+                for(int i = 0;i<queue.getSize();i++){
                     queue.getElmt(i).setStatus(queue.getElmt(i).getStatus()-1);
                     if (queue.getElmt(i).getStatus() == -1 && queue.getElmt(i).getType() == 'R')
                     {
@@ -106,9 +108,7 @@ namespace MazeSolver{
             }
             treasure.decreaseNumOfStepped();
             path.AddRange(tempChar);
-
         }
-
         public Tile getPreviousPath(Tile treasure,List<char> tempChar,Maze maze){
             int treasureX = treasure.getPosition().getX();
             int treasureY = treasure.getPosition().getY();
@@ -128,7 +128,6 @@ namespace MazeSolver{
             }
             treasure.addNumOfStepped();
             return treasure;
-
         }
         public void coloringPath(int x, int y, int numStep)
         {
@@ -144,20 +143,5 @@ namespace MazeSolver{
                 Global.changeColor(x, y, Color.DarkGreen);
             }
         }
-
-        // DEBUG FUNTION
-        public void resetMazeInfo(Maze maze){
-            for(int i = 1; i<maze.getSizeY()+1; i++){
-                for(int j = 1; j<maze.getSizeX()+1; j++){
-                    Tile adhoc = maze.getTile(j,i);
-                    if(adhoc.getStatus()>=2){
-                        adhoc.setStatus(1);
-                    }
-                    // adhoc.setNumOfStepped(0);
-                    // adhoc.setPathBefore('Z');
-                }
-            }
-        }
-
     }
 }

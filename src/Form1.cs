@@ -145,7 +145,7 @@ namespace MazeSolver
                         this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.Black;
                     } else if (tile.getType() == 'K')
                     {
-                        this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.Green;
+                        this.dataGridView1.Rows[i].Cells[j].Style.BackColor = Color.Red;
                     }
                     else if (tile.getType() == 'F' || tile.getType() == 'T')
                     {
@@ -187,6 +187,12 @@ namespace MazeSolver
         private void label13_Click(string n)
         {
             this.label13.Text = n;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            int value = ((TrackBar)sender).Value;
+            Global.setSleepTime(1000 / value);
         }
     }
 }

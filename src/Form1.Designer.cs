@@ -30,10 +30,13 @@ namespace MazeSolver
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label13 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -59,9 +62,11 @@ namespace MazeSolver
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +102,8 @@ namespace MazeSolver
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(243)))), ((int)(((byte)(107)))));
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.trackBar1);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.groupBox4);
@@ -111,6 +118,32 @@ namespace MazeSolver
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label14.Font = new System.Drawing.Font("SF UI Display SemBd", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(273, 438);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(104, 35);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Speed";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trackBar1.Location = new System.Drawing.Point(273, 473);
+            this.trackBar1.Maximum = 20;
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(104, 45);
+            this.trackBar1.TabIndex = 0;
+            this.trackBar1.Value = 1;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -118,9 +151,9 @@ namespace MazeSolver
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.Font = new System.Drawing.Font("SF UI Display SemBd", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(6, 413);
+            this.label13.Location = new System.Drawing.Point(30, 405);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(391, 34);
+            this.label13.Size = new System.Drawing.Size(222, 42);
             this.label13.TabIndex = 1;
             this.label13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -129,7 +162,7 @@ namespace MazeSolver
             this.checkBox1.AutoSize = true;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Font = new System.Drawing.Font("SF UI Display SemBd", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(159, 382);
+            this.checkBox1.Location = new System.Drawing.Point(159, 376);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(83, 36);
             this.checkBox1.TabIndex = 5;
@@ -157,7 +190,7 @@ namespace MazeSolver
             this.label6.Location = new System.Drawing.Point(-2, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(289, 65);
+            this.label6.Size = new System.Drawing.Size(284, 65);
             this.label6.TabIndex = 6;
             this.label6.Text = "Input Your File Here";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -165,12 +198,12 @@ namespace MazeSolver
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("SF UI Display Bd", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(289, 0);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(284, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(60, 65);
+            this.button2.Size = new System.Drawing.Size(65, 65);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -180,7 +213,7 @@ namespace MazeSolver
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("SF UI Display Bd", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(86, 449);
+            this.button1.Location = new System.Drawing.Point(28, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 58);
             this.button1.TabIndex = 4;
@@ -201,7 +234,6 @@ namespace MazeSolver
             // 
             // radioButton2
             // 
-            this.radioButton2.Checked = true;
             this.radioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioButton2.Font = new System.Drawing.Font("SF UI Display SemBd", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.Location = new System.Drawing.Point(14, 51);
@@ -310,7 +342,7 @@ namespace MazeSolver
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(0, 0);
             this.dataGridView1.TabIndex = 0;
-            Global.setDataGridView(this.dataGridView1);
+            Global.setDataGridView(this.dataGridView1); 
             // 
             // groupBox6
             // 
@@ -398,7 +430,7 @@ namespace MazeSolver
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1155, 673);
+            this.ClientSize = new System.Drawing.Size(1264, 679);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button3);
@@ -417,9 +449,11 @@ namespace MazeSolver
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -456,6 +490,8 @@ namespace MazeSolver
         private Label label11;
         private Label label10;
         private Label label13;
+        private TrackBar trackBar1;
+        private Label label14;
     }
 }
 
