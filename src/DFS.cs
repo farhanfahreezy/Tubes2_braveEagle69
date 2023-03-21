@@ -1,4 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 
 namespace MazeSolver{
     class DFS{
@@ -65,16 +68,28 @@ namespace MazeSolver{
             }
             stack.push(add);
             add.setPathBefore(pathBefore);
+            if (add.getStatus() == 0 && add.getType() == 'R')
+            {
+                Global.changeColor(add.getPosition().getX(), add.getPosition().getY(), Color.LightGray);
+            }
         }
         public Tile pop(Stack<Tile> stack){
             Tile pops = stack.pop();
             pops.addStatus();
+            if (pops.getStatus() == 1 && pops.getType() == 'R')
+            {
+                Global.changeColor(pops.getPosition().getX(), pops.getPosition().getY(), Color.Gray);
+            }
             return pops;
         }
         public void clearStack(Stack<Tile> stack){
             if(stack.getSize()!=0){
                 for(int i = 0;i<stack.getSize()-1;i++){
                     stack.getElmt(i).setStatus(stack.getElmt(i).getStatus()-1);
+                    if (stack.getElmt(i).getStatus() == -1 && stack.getElmt(i).getType() == 'R')
+                    {
+                        Global.changeColor(stack.getElmt(i).getPosition().getX(), stack.getElmt(i).getPosition().getY(), Color.White);
+                    }
                 }
                 stack.clear();
             }
@@ -99,7 +114,8 @@ namespace MazeSolver{
         public Tile getPreviousPath(Tile treasure,List<char> tempChar,Maze maze){
             int treasureX = treasure.getPosition().getX();
             int treasureY = treasure.getPosition().getY();
-            if(treasure.getPathBefore() == 'U'){
+            coloringPath(treasure.getPosition().getX(), treasure.getPosition().getY(), treasure.getNumOfStepped());
+            if (treasure.getPathBefore() == 'U'){
                 tempChar.Insert(0,'D');
                 treasure = maze.getTile(treasureX,treasureY-1);
             } else if(treasure.getPathBefore() == 'D'){
@@ -116,6 +132,22 @@ namespace MazeSolver{
             return treasure;
 
         }
+        public void coloringPath(int x, int y, int numStep)
+        {
+            if (numStep == 1)
+            {
+                Global.changeColor(x, y, Color.LightGreen);
+            }
+            else if (numStep == 2)
+            {
+                Global.changeColor(x, y, Color.Green);
+            }
+            else if (numStep == 3)
+            {
+                Global.changeColor(x, y, Color.DarkGreen);
+            }
+        }
+
         public void resetMazeInfo(Maze maze){
             for(int i = 1; i<maze.getSizeY()+1; i++){
                 for(int j = 1; j<maze.getSizeX()+1; j++){
