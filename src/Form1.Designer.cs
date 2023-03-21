@@ -62,7 +62,6 @@ namespace MazeSolver
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -311,6 +310,7 @@ namespace MazeSolver
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(0, 0);
             this.dataGridView1.TabIndex = 0;
+            Global.setDataGridView(this.dataGridView1);
             // 
             // groupBox6
             // 
@@ -420,7 +420,6 @@ namespace MazeSolver
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);

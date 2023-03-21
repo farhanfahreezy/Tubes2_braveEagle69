@@ -55,7 +55,7 @@ namespace MazeSolver
         public static void changeColor(int x, int y, Color color)
         {
             //System.Threading.Thread.Sleep(500);
-            dataGridView1.Rows[y - 1].Cells[x - 1].Style.BackColor = color;
+            dataGridView1.Rows[y-1].Cells[x-1].Style.BackColor = color;
         }
     }
 }
