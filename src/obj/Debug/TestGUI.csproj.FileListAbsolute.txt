@@ -1,0 +1,11 @@
+D:\Coding\C#\TestGUI\TestGUI\bin\Debug\TestGUI.exe.config
+D:\Coding\C#\TestGUI\TestGUI\bin\Debug\TestGUI.exe
+D:\Coding\C#\TestGUI\TestGUI\bin\Debug\TestGUI.pdb
+D:\Coding\C#\TestGUI\TestGUI\obj\Debug\TestGUI.csproj.AssemblyReference.cache
+D:\Coding\C#\TestGUI\TestGUI\obj\Debug\TestGUI.csproj.SuggestedBindingRedirects.cache
+D:\Coding\C#\TestGUI\TestGUI\obj\Debug\TestGUI.Properties.Resources.resources
+D:\Coding\C#\TestGUI\TestGUI\obj\Debug\TestGUI.csproj.GenerateResource.cache
+D:\Coding\C#\TestGUI\TestGUI\obj\Debug\TestGUI.csproj.CoreCompileInputs.cache
+D:\Coding\C#\TestGUI\TestGUI\obj\Debug\TestGUI.exe
+D:\Coding\C#\TestGUI\TestGUI\obj\Debug\TestGUI.pdb
+D:\Coding\C#\TestGUI\TestGUI\obj\Debug\MazeSolver.Form1.resources

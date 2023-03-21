@@ -1,4 +1,7 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 
 namespace MazeSolver{
     class BFS{
@@ -62,17 +65,29 @@ namespace MazeSolver{
                 add.addStatus();
                 add.setPathBefore(pathBefore);
                 queue.enqueue(add);
+                if (add.getStatus() == 0 && add.getType() == 'R')
+                {
+                    Global.changeColor(add.getPosition().getX(), add.getPosition().getY(), Color.LightGray);
+                }
             }
         }
         public Tile dequeue(Queue<Tile> queue){
             Tile deque = queue.dequeue();
             deque.addStatus();
+            if (deque.getStatus() == 1 && deque.getType() == 'R')
+            {
+                Global.changeColor(deque.getPosition().getX(), deque.getPosition().getY(), Color.Gray);
+            }
             return deque;
         }
         public void clearQueue(Queue<Tile> queue){
             if(queue.getSize()!=0){
                 for(int i = 0;i<queue.getSize()-1;i++){
                     queue.getElmt(i).setStatus(queue.getElmt(i).getStatus()-1);
+                    if (queue.getElmt(i).getStatus() == -1 && queue.getElmt(i).getType() == 'R')
+                    {
+                        Global.changeColor(queue.getElmt(i).getPosition().getX(), queue.getElmt(i).getPosition().getY(), Color.White);
+                    }
                 }
                 queue.clear();
             }
@@ -97,7 +112,8 @@ namespace MazeSolver{
         public Tile getPreviousPath(Tile treasure,List<char> tempChar,Maze maze){
             int treasureX = treasure.getPosition().getX();
             int treasureY = treasure.getPosition().getY();
-            if(treasure.getPathBefore() == 'U'){
+            coloringPath(treasure.getPosition().getX(), treasure.getPosition().getY(), treasure.getNumOfStepped());
+            if (treasure.getPathBefore() == 'U'){
                 tempChar.Insert(0,'D');
                 treasure = maze.getTile(treasureX,treasureY-1);
             } else if(treasure.getPathBefore() == 'D'){
@@ -113,6 +129,20 @@ namespace MazeSolver{
             treasure.addNumOfStepped();
             return treasure;
 
+        }
+        public void coloringPath(int x, int y, int numStep)
+        {
+            if(numStep == 1) {
+                Global.changeColor(x, y, Color.LightGreen);
+            }
+            else if (numStep == 2)
+            {
+                Global.changeColor(x, y, Color.Green);
+            }
+            else if (numStep == 3)
+            {
+                Global.changeColor(x, y, Color.DarkGreen);
+            }
         }
 
         // DEBUG FUNTION

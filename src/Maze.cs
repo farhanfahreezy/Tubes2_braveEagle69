@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace MazeSolver{
     class Maze{
@@ -8,10 +9,10 @@ namespace MazeSolver{
         private Point start;
         private int treasureCount;
 
-        public Maze(char[,] charArray){
+        public Maze(List<List<char>> charArray){
             // Bikin maze yang nambah luaran
-            sizeY = charArray.GetLength(0);
-            sizeX = charArray.Length/charArray.GetLength(0);
+            sizeY = charArray.Count;
+            sizeX = charArray[0].Count;
 
             maze = new Tile[sizeY+2,sizeX+2];
             int xtemp = 0;
@@ -21,7 +22,7 @@ namespace MazeSolver{
                     if(i == 0 || i == sizeY+1 || j == 0 || j == sizeX+1){
                         maze[i,j] = new Tile('X',j,i);
                     } else {
-                        maze[i,j] = new Tile(charArray[i-1,j-1],j,i);
+                        maze[i,j] = new Tile(charArray[i-1][j-1],j,i);
                         if(maze[i,j].getType() == 'K'){
                             xtemp = j;
                             ytemp = i;
@@ -60,6 +61,21 @@ namespace MazeSolver{
         }
         public int getSizeY(){
             return sizeY;
+        }
+        public int getNumOfChecked()
+        {
+            int numOfChecked = 0;
+            for(int i = 1; i < sizeY+1; i++)
+            {
+                for(int j = 0;j<sizeX+1; j++)
+                {
+                    if (maze[i,j].getStatus() >= 1)
+                    {
+                        numOfChecked++;
+                    }
+                }
+            }
+            return numOfChecked;
         }
     }
 }
