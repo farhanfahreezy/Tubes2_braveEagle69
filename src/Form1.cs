@@ -27,8 +27,20 @@ namespace MazeSolver
         private void button1_Click(object sender, EventArgs e)
         {
             Reader reader = new Reader();
-            Global.createMaze(reader.readFile(Global.getFilePath()));
-            showTheFookingMaze();
+            if (Global.getFilePath() == null)
+            {
+                label13_Click("Masukkan file terlebih dahulu!");
+            }
+            else if(!reader.validateInput(Global.getFilePath()))
+            {
+                label13_Click("Input file tidak sesuai!");
+            }
+            else
+            {
+                Global.createMaze(reader.readFile(Global.getFilePath()));
+                showTheFookingMaze();
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -170,6 +182,11 @@ namespace MazeSolver
         private void label12_Click(double n)
         {
             this.label12.Text = n.ToString() + " ms";
+        }
+
+        private void label13_Click(string n)
+        {
+            this.label13.Text = n;
         }
     }
 }

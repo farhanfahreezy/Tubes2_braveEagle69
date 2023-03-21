@@ -34,6 +34,7 @@ namespace MazeSolver
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@ namespace MazeSolver
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = Global.getDataGridView1();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -97,6 +98,7 @@ namespace MazeSolver
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(243)))), ((int)(((byte)(107)))));
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.button1);
@@ -110,12 +112,25 @@ namespace MazeSolver
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.Font = new System.Drawing.Font("SF UI Display SemBd", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(6, 413);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(391, 34);
+            this.label13.TabIndex = 1;
+            this.label13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Font = new System.Drawing.Font("SF UI Display SemBd", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(154, 382);
+            this.checkBox1.Location = new System.Drawing.Point(159, 382);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(83, 36);
             this.checkBox1.TabIndex = 5;
@@ -150,7 +165,7 @@ namespace MazeSolver
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("SF UI Display Bd", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("SF UI Display Bd", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(289, 0);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
@@ -322,7 +337,7 @@ namespace MazeSolver
             this.label12.Location = new System.Drawing.Point(451, 43);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(0, 15);
+            this.label12.Size = new System.Drawing.Size(0, 19);
             this.label12.TabIndex = 5;
             // 
             // label11
@@ -333,7 +348,7 @@ namespace MazeSolver
             this.label11.Location = new System.Drawing.Point(371, 24);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(0, 15);
+            this.label11.Size = new System.Drawing.Size(0, 19);
             this.label11.TabIndex = 4;
             // 
             // label10
@@ -344,7 +359,7 @@ namespace MazeSolver
             this.label10.Location = new System.Drawing.Point(371, 5);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 15);
+            this.label10.Size = new System.Drawing.Size(0, 19);
             this.label10.TabIndex = 3;
             // 
             // label9
@@ -441,6 +456,7 @@ namespace MazeSolver
         private Label label12;
         private Label label11;
         private Label label10;
+        private Label label13;
     }
 }
 

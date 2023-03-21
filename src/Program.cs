@@ -51,6 +51,7 @@ namespace MazeSolver
         public static string getFilePath() { return filePath; }
         public static void setFilePath(string fP) { filePath = fP; }
         public static DataGridView getDataGridView1() { return dataGridView1; }
+        public static void setDataGridView(DataGridView dgv) { dataGridView1 = dgv; }
         public static void changeColor(int x, int y, Color color)
         {
             //System.Threading.Thread.Sleep(500);
