@@ -143,7 +143,7 @@ namespace MazeSolver
 
             this.dataGridView1.ReadOnly = true;
 
-            
+
 
 
             // Mewarnai
