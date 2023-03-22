@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace MazeSolver
 {
@@ -31,10 +32,11 @@ namespace MazeSolver
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label14 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label13 = new System.Windows.Forms.Label();
@@ -60,7 +62,24 @@ namespace MazeSolver
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -76,32 +95,22 @@ namespace MazeSolver
             this.openFileDialog1.InitialDirectory = "./test";
             this.openFileDialog1.Title = "Click Here to Open Files";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(1264, 100);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SF UI Display SemBd", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label1.Font = new System.Drawing.Font("SF UI Display SemBd", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(334, 9);
+            this.label1.Location = new System.Drawing.Point(-1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(636, 76);
+            this.label1.Size = new System.Drawing.Size(1265, 112);
             this.label1.TabIndex = 0;
             this.label1.Text = "Treasure Hunt Solver";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(243)))), ((int)(((byte)(107)))));
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.groupBox2.Controls.Add(this.checkBox2);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.trackBar1);
             this.groupBox2.Controls.Add(this.label13);
@@ -118,12 +127,27 @@ namespace MazeSolver
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBox2.Font = new System.Drawing.Font("SF UI Display SemBd", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.ForeColor = System.Drawing.Color.White;
+            this.checkBox2.Location = new System.Drawing.Point(289, 402);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(71, 23);
+            this.checkBox2.TabIndex = 7;
+            this.checkBox2.Text = "Turbo";
+            this.checkBox2.UseVisualStyleBackColor = false;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // label14
             // 
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label14.BackColor = System.Drawing.Color.White;
             this.label14.Font = new System.Drawing.Font("SF UI Display SemBd", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(273, 438);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label14.Location = new System.Drawing.Point(273, 425);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(104, 35);
@@ -133,9 +157,9 @@ namespace MazeSolver
             // 
             // trackBar1
             // 
-            this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.trackBar1.BackColor = System.Drawing.Color.White;
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBar1.Location = new System.Drawing.Point(273, 473);
+            this.trackBar1.Location = new System.Drawing.Point(273, 460);
             this.trackBar1.Maximum = 20;
             this.trackBar1.Minimum = 1;
             this.trackBar1.Name = "trackBar1";
@@ -162,7 +186,8 @@ namespace MazeSolver
             this.checkBox1.AutoSize = true;
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBox1.Font = new System.Drawing.Font("SF UI Display SemBd", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(159, 376);
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(159, 374);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(83, 36);
             this.checkBox1.TabIndex = 5;
@@ -175,7 +200,7 @@ namespace MazeSolver
             this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(240)))));
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Location = new System.Drawing.Point(28, 160);
+            this.groupBox4.Location = new System.Drawing.Point(28, 146);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(349, 65);
             this.groupBox4.TabIndex = 4;
@@ -209,10 +234,10 @@ namespace MazeSolver
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("SF UI Display Bd", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
             this.button1.Location = new System.Drawing.Point(28, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 58);
@@ -220,13 +245,15 @@ namespace MazeSolver
             this.button1.Text = "Visualize";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(240)))));
             this.groupBox3.Controls.Add(this.radioButton2);
             this.groupBox3.Controls.Add(this.radioButton1);
-            this.groupBox3.Location = new System.Drawing.Point(28, 276);
+            this.groupBox3.Location = new System.Drawing.Point(28, 273);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(349, 100);
             this.groupBox3.TabIndex = 3;
@@ -262,9 +289,10 @@ namespace MazeSolver
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("SF UI Display SemBd", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
-            this.label5.Location = new System.Drawing.Point(20, 228);
+            this.label5.Location = new System.Drawing.Point(28, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(190, 45);
             this.label5.TabIndex = 2;
@@ -273,9 +301,10 @@ namespace MazeSolver
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("SF UI Display SemBd", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
-            this.label4.Location = new System.Drawing.Point(20, 112);
+            this.label4.Location = new System.Drawing.Point(28, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(177, 45);
             this.label4.TabIndex = 1;
@@ -284,12 +313,12 @@ namespace MazeSolver
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
-            this.label2.Font = new System.Drawing.Font("SF UI Display Bd", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(19, 16);
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("SF UI Display SemBd", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label2.Location = new System.Drawing.Point(27, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 51);
+            this.label2.Size = new System.Drawing.Size(124, 51);
             this.label2.TabIndex = 0;
             this.label2.Text = "Input";
             // 
@@ -297,11 +326,11 @@ namespace MazeSolver
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
-            this.label3.Font = new System.Drawing.Font("SF UI Display Bd", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("SF UI Display SemBd", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(435, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 51);
+            this.label3.Size = new System.Drawing.Size(160, 51);
             this.label3.TabIndex = 1;
             this.label3.Text = "Output";
             // 
@@ -318,6 +347,8 @@ namespace MazeSolver
             this.button3.Text = "Search!";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
             // groupBox5
             // 
@@ -335,6 +366,14 @@ namespace MazeSolver
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
@@ -342,7 +381,6 @@ namespace MazeSolver
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(0, 0);
             this.dataGridView1.TabIndex = 0;
-            Global.setDataGridView(this.dataGridView1); 
             // 
             // groupBox6
             // 
@@ -425,28 +463,224 @@ namespace MazeSolver
             this.label7.TabIndex = 0;
             this.label7.Text = "Route :";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label15.Font = new System.Drawing.Font("SF UI Display SemBd", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(1147, 129);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(75, 23);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "Legend";
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Yellow;
+            this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label17.Location = new System.Drawing.Point(890, 158);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 40);
+            this.label17.TabIndex = 11;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Black;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Location = new System.Drawing.Point(935, 158);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(39, 40);
+            this.label18.TabIndex = 12;
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.White;
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Location = new System.Drawing.Point(980, 158);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(39, 40);
+            this.label19.TabIndex = 13;
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label20.Location = new System.Drawing.Point(1070, 158);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 40);
+            this.label20.TabIndex = 14;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label21.Location = new System.Drawing.Point(1093, 158);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(39, 40);
+            this.label21.TabIndex = 15;
+            // 
+            // label22
+            // 
+            this.label22.BackColor = System.Drawing.Color.Lime;
+            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label22.Location = new System.Drawing.Point(1116, 158);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(39, 40);
+            this.label22.TabIndex = 16;
+            // 
+            // label23
+            // 
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label23.Location = new System.Drawing.Point(1139, 158);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(39, 40);
+            this.label23.TabIndex = 17;
+            // 
+            // label24
+            // 
+            this.label24.BackColor = System.Drawing.Color.Green;
+            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label24.Location = new System.Drawing.Point(1161, 158);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(39, 40);
+            this.label24.TabIndex = 18;
+            // 
+            // label25
+            // 
+            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label25.Location = new System.Drawing.Point(1184, 158);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(39, 40);
+            this.label25.TabIndex = 19;
+            // 
+            // label26
+            // 
+            this.label26.BackColor = System.Drawing.Color.Red;
+            this.label26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label26.Location = new System.Drawing.Point(845, 158);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(39, 40);
+            this.label26.TabIndex = 20;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("SF UI Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label16.Location = new System.Drawing.Point(848, 202);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(32, 13);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "Start";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("SF UI Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label27.Location = new System.Drawing.Point(886, 202);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(53, 13);
+            this.label27.TabIndex = 22;
+            this.label27.Text = "Treasure";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.BackColor = System.Drawing.Color.Transparent;
+            this.label28.Font = new System.Drawing.Font("SF UI Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label28.Location = new System.Drawing.Point(940, 202);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(29, 13);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "Wall";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("SF UI Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label29.Location = new System.Drawing.Point(1005, 202);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(31, 13);
+            this.label29.TabIndex = 24;
+            this.label29.Text = "Path";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("SF UI Display", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
+            this.label30.Location = new System.Drawing.Point(1077, 202);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(141, 13);
+            this.label30.TabIndex = 25;
+            this.label30.Text = "Route (darker every steps)";
+            // 
+            // label33
+            // 
+            this.label33.BackColor = System.Drawing.Color.Gray;
+            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label33.Location = new System.Drawing.Point(1025, 158);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(39, 40);
+            this.label33.TabIndex = 27;
+            // 
+            // label34
+            // 
+            this.label34.BackColor = System.Drawing.Color.LightGray;
+            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label34.Location = new System.Drawing.Point(1002, 158);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(39, 40);
+            this.label34.TabIndex = 26;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 679);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1280, 718);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1154, 669);
             this.Name = "Form1";
-            this.Text = "TestGUI";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Text = "Maze Solver";
+            this.Icon = new Icon("../src/resources/pirate.ico");
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
@@ -464,7 +698,6 @@ namespace MazeSolver
         #endregion
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
@@ -492,6 +725,25 @@ namespace MazeSolver
         private Label label13;
         private TrackBar trackBar1;
         private Label label14;
+        private Label label25;
+        private Label label24;
+        private Label label23;
+        private Label label22;
+        private Label label21;
+        private Label label20;
+        private Label label19;
+        private Label label18;
+        private Label label17;
+        private Label label15;
+        private Label label26;
+        private Label label16;
+        private Label label30;
+        private Label label29;
+        private Label label28;
+        private Label label27;
+        private CheckBox checkBox2;
+        private Label label33;
+        private Label label34;
     }
 }
 

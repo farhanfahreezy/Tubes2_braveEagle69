@@ -7,12 +7,14 @@ namespace MazeSolver{
         private int status;
         private int numOfStepped;
         private Point position;
+        private bool isChecked;
 
         public Tile(char c, int x, int y){
             position = new Point(x,y);
             type = c;
             pathBefore = 'Z';
             status = -1;
+            isChecked = false;
         }
 
         public char getType(){
@@ -62,6 +64,8 @@ namespace MazeSolver{
         public Point getPosition(){
             return position;
         }
+        public bool getIsChecked() { return isChecked; }
+        public void setIsChecked(bool v) { isChecked=v; }
 
         public void printTile(){
             if(type == 'X'){

@@ -20,13 +20,14 @@ namespace MazeSolver
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Reader reader = new Reader();
+            label9_Click("",0);
+            label10_Click(0);
+            label11_Click(0);
+            label12_Click(0);
+            label13_Click("");
             if (Global.getFilePath() == null)
             {
                 label13_Click("Masukkan file terlebih dahulu!");
@@ -97,7 +98,18 @@ namespace MazeSolver
         {
             Global.changeTSPstatus();
         }
-
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Global.changeIsTurbo();
+            if (Global.getIsTurbo())
+            {
+                Global.setSleepTime(0);
+                this.trackBar1.Value = 1;
+            } else
+            {
+                Global.setSleepTime(500/this.trackBar1.Value);
+            }
+        }
         private void label6_Click(string newLabel)
         {
             label6.Text = newLabel;
@@ -130,6 +142,8 @@ namespace MazeSolver
             this.dataGridView1.ScrollBars = ScrollBars.None;
 
             this.dataGridView1.ReadOnly = true;
+
+            
 
 
             // Mewarnai
@@ -164,24 +178,53 @@ namespace MazeSolver
         private void label9_Click(string path, int len)
         {
             this.label9.Font = new System.Drawing.Font("SF UI Display SemBd", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            if (len > 40)
+            if(len > 80 )
+            {
+                this.label9.Font = new System.Drawing.Font("SF UI Display SemBd", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            }
+            else if (len > 45)
             {
                 this.label9.Font = new System.Drawing.Font("SF UI Display SemBd", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             }
+            else if (len > 40)
+            {
+                this.label9.Font = new System.Drawing.Font("SF UI Display SemBd", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            }
+
             this.label9.Text = path;
         }
 
         private void label10_Click(int n)
         {
-            this.label10.Text = n.ToString();
+            if (n == 0)
+            {
+                this.label10.Text = "";
+            } else
+            {
+                this.label10.Text = n.ToString();
+            }
         }
         private void label11_Click(int n)
         {
-            this.label11.Text = n.ToString();
+            if (n == 0)
+            {
+                this.label11.Text = "";
+            }
+            else
+            {
+                this.label11.Text = n.ToString();
+            }
         }
         private void label12_Click(double n)
         {
-            this.label12.Text = n.ToString() + " ms";
+            if (n == 0)
+            {
+                this.label12.Text = "";
+            }
+            else
+            {
+                this.label12.Text = n.ToString() + " ms";
+            }
         }
 
         private void label13_Click(string n)
@@ -192,7 +235,32 @@ namespace MazeSolver
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             int value = ((TrackBar)sender).Value;
-            Global.setSleepTime(1000 / value);
+            Global.setSleepTime(500 / value);
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            this.button1.BackColor = ControlPaint.Light(Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44))))), 0.2f);
+            this.button1.ForeColor = ControlPaint.Light(Color.White, 0.2f);
+
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            this.button1.ForeColor = ControlPaint.Light(Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44))))), 0.2f);
+            this.button1.BackColor = ControlPaint.Light(Color.White, 0.2f);
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            this.button3.ForeColor = ControlPaint.Light(Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44))))), 0.2f);
+            this.button3.BackColor = ControlPaint.Light(Color.White, 0.2f);
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            this.button3.BackColor = ControlPaint.Light(Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(40)))), ((int)(((byte)(44))))), 0.2f);
+            this.button3.ForeColor = ControlPaint.Light(Color.White, 0.2f);
         }
     }
 }

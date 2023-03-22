@@ -1,11 +1,14 @@
 D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\Tubes2_braveEagle69.csproj.AssemblyReference.cache
 D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\Tubes2_braveEagle69.csproj.SuggestedBindingRedirects.cache
 D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.Form1.resources
-D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\TestGUI.Properties.Resources.resources
 D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\Tubes2_braveEagle69.csproj.GenerateResource.cache
 D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\Tubes2_braveEagle69.csproj.CoreCompileInputs.cache
-D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\TestGUI.exe
-D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\TestGUI.pdb
 D:\Coding\C#\Tubes2_braveEagle69\src\bin\Debug\TestGUI.exe.config
 D:\Coding\C#\Tubes2_braveEagle69\src\bin\Debug\TestGUI.exe
 D:\Coding\C#\Tubes2_braveEagle69\src\bin\Debug\TestGUI.pdb
+D:\Coding\C#\Tubes2_braveEagle69\bin\MazeSolver.exe.config
+D:\Coding\C#\Tubes2_braveEagle69\bin\MazeSolver.exe
+D:\Coding\C#\Tubes2_braveEagle69\bin\MazeSolver.pdb
+D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.Properties.Resources.resources
+D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.exe
+D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.pdb

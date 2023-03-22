@@ -31,7 +31,8 @@ namespace MazeSolver
         private static Maze maze;
         private static string filePath;
         private static DataGridView dataGridView1 = new DataGridView();
-        private static int sleepTime = 1000;
+        private static int sleepTime = 500;
+        private static bool isTurbo = false;
 
         public static int getAlgoChoosen() { return algoChoosen; }
         public static void setAlgoChoosen(int newAlgoChoosen) { algoChoosen = newAlgoChoosen; }
@@ -57,10 +58,26 @@ namespace MazeSolver
         public static void changeColor(int x, int y, Color color)
         {
             dataGridView1.Rows[y-1].Cells[x-1].Style.BackColor = color;
-            System.Threading.Thread.Sleep(getSleepTime());
-            Application.DoEvents();
+            if (!isTurbo)
+            {
+                System.Threading.Thread.Sleep(getSleepTime());
+                Application.DoEvents();
+            }
+            
         }
         public static int getSleepTime() { return sleepTime; }
         public static void setSleepTime(int sT) { sleepTime = sT; }
+        public static bool getIsTurbo() { return isTurbo; }
+        public static void changeIsTurbo()
+        {
+            if (isTurbo)
+            {
+                isTurbo = false;
+            }
+            else
+            {
+                isTurbo = true;
+            }
+        }
     }
 }
