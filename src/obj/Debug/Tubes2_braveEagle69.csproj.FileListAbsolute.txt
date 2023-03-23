@@ -12,3 +12,14 @@ D:\Coding\C#\Tubes2_braveEagle69\bin\MazeSolver.pdb
 D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.Properties.Resources.resources
 D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.exe
 D:\Coding\C#\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.pdb
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\src\obj\Debug\Tubes2_braveEagle69.csproj.AssemblyReference.cache
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\src\obj\Debug\Tubes2_braveEagle69.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.Form1.resources
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.Properties.Resources.resources
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\src\obj\Debug\Tubes2_braveEagle69.csproj.GenerateResource.cache
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\src\obj\Debug\Tubes2_braveEagle69.csproj.CoreCompileInputs.cache
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.exe
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\src\obj\Debug\MazeSolver.pdb
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\bin\MazeSolver.exe.config
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\bin\MazeSolver.exe
+C:\Users\Lekss\Documents\GitHub\Tubes2_braveEagle69\bin\MazeSolver.pdb
