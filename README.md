@@ -60,6 +60,6 @@ To run the Maze Solver program, follow these steps:
 | Name | NIM |
 | -------- | -------- |
 | Alex Sander | 13521061 |
-| Shidqi Indy Izhari | 13521098 |
+| Shidqi Indy Izhari | 13521097 |
 | Mohammad Farhan Fahrezy | 13521106 |
 
