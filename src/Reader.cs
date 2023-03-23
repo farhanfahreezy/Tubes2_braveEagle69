@@ -32,6 +32,8 @@ namespace MazeSolver{
             StreamReader reader = new StreamReader(filePath);
             bool valid = true;
             int len = 0;
+            int countK =0;
+            int countT=0;
             while(!reader.EndOfStream && valid){
                 string line = reader.ReadLine() ?? "";
                 string[] token = io.tokenizeString(line, ' ');
@@ -50,9 +52,18 @@ namespace MazeSolver{
                         if (token[i][0] != 'K' && token[i][0] != 'R' && token[i][0] != 'X' && token[i][0] != 'T'){
                             return false;
                         }
+                        if (token[i][0] == 'K') {
+                            countK++;
+                        }
+                        if (token[i][0]== 'T') {
+                            countT++;
+                        }
                     }
                     i++;
                 }
+            }
+            if (countK != 1 || countT == 0) {
+                return false;
             }
             return valid;
         }
